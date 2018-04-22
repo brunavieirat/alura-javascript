@@ -2,6 +2,9 @@ console.log("JS carregado");
 
 var paciente = document.querySelector("#primeiro-paciente");
 
+var pacientes = document.querySelectorAll(".paciente");
+console.log(pacientes);
+
 var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 
