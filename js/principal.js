@@ -41,13 +41,25 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 }
 
-var titulo= document.querySelector("h1");
-
-titulo.addEventListener("click", mostraMensagem);
-
-function mostraMensagem(){
-    console.log("Olá eu fui clicado!");
-}
+// var titulo= document.querySelector("h1");
 
 
+// //função anônima
+// titulo.addEventListener("click", function (){
+//     console.log("Olá eu fui clicado!");
+// });
+
+//função nomeada
+// titulo.addEventListener("click", mostraMensagem);
+
+// function mostraMensagem(){
+//     console.log("Olá eu fui clicado!");
+// }
+
+var buttonAdd = document.querySelector("#adicionar-paciente");
+
+buttonAdd.addEventListener("click", function (e){
+        e.preventDefault();
+        console.log("Olá eu fui clicado!");
+    });
 
