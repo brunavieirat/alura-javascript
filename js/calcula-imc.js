@@ -35,10 +35,18 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 
     if (alturaEhValida && pesoEhValido) {
-        var imc = peso / (altura * altura);
-        tdImc.textContent = imc.toFixed(2);
+        var imc = calculaImc(peso, altura);
+        tdImc.textContent = imc;
 
     }
+}
+
+function calculaImc(peso, altura) {
+    var imc = 0;
+
+    imc = peso / (altura * altura);
+
+    return imc.toFixed(2);
 }
 
 // var titulo= document.querySelector("h1");
