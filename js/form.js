@@ -10,12 +10,32 @@ buttonAdd.addEventListener("click", function (e) {
 
     var pacienteTr= montaTr(paciente);    
 
-    var tabela = document.querySelector("#tabela-pacientes");
+    // if(validaPaciente(paciente)){
+    //     var tabela = document.querySelector("#tabela-pacientes");
 
-    tabela.appendChild(pacienteTr);
+    // tabela.appendChild(pacienteTr);
+    // form.reset();
+    // }
+    // else {
+    //     console.log('erro');
+    // }
 
-    form.reset();
+    
+
+    if(!validaPaciente(paciente)){
+
+        return;
+    }
+    else {
+        var tabela = document.querySelector("#tabela-pacientes");
+
+         tabela.appendChild(pacienteTr);
+         form.reset();
+    }
+
+    
 });
+
 
 function obtemPacienteDoFormulario(form) {
 
@@ -60,4 +80,16 @@ function montaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
 
     return pacienteTr;
+}
+
+function validaPaciente(paciente){
+   // if(validaPeso(paciente.peso)&& validaAltura(paciente.altura)){
+    
+   if(validaAltura(paciente.altura) && validaPeso(paciente.peso)){
+       
+        return true;
+    }
+    else {
+        return false;
+    }
 }

@@ -16,18 +16,37 @@ for (var i = 0; i < pacientes.length; i++) {
 
     var tdImc = paciente.querySelector(".info-imc");
 
-    var pesoEhValido = true;
-    var alturaEhValida = true;
+    var pesoEhValido = validaPeso(peso);
+    var alturaEhValida = validaAltura(altura);
 
-    if (peso <= 0 || peso >= 1000) {
-        console.log("Peso inválido!");
+    
+function validaPeso(peso){
+    console.log('peso', peso)
+    if (peso >= 0 && peso <= 1000) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validaAltura(altura) {
+    console.log(altura)
+    if (altura >= 0 && altura <= 3.0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+    if (!pesoEhValido) {
+    //    console.log("Peso inválido!");
         pesoEhValido = false;
         tdImc.textContent = "Peso inválido";
         paciente.classList.add("paciente-invalido");
     }
 
-    if (altura <= 0 || altura >= 3.00) {
-        console.log("Altura inválida!");
+    if (!alturaEhValida) {
+    //    console.log("Altura inválida!");
         alturaEhValida = false;
         tdImc.textContent = "Altura inválida";
         // paciente.style.backgroundColor = "lightcoral";
