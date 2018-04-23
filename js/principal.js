@@ -30,14 +30,14 @@ for (var i = 0; i < pacientes.length; i++) {
         console.log("Altura inválida!");
         alturaEhValida = false;
         tdImc.textContent = "Altura inválida";
-       // paciente.style.backgroundColor = "lightcoral";
+        // paciente.style.backgroundColor = "lightcoral";
         paciente.classList.add("paciente-invalido")
     }
 
-  if (alturaEhValida && pesoEhValido) {
+    if (alturaEhValida && pesoEhValido) {
         var imc = peso / (altura * altura);
         tdImc.textContent = imc.toFixed(2);
-        
+
     }
 }
 
@@ -58,8 +58,39 @@ for (var i = 0; i < pacientes.length; i++) {
 
 var buttonAdd = document.querySelector("#adicionar-paciente");
 
-buttonAdd.addEventListener("click", function (e){
-        e.preventDefault();
-        console.log("Olá eu fui clicado!");
-    });
+buttonAdd.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    var form = document.querySelector("#form-adiciona");
+
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    console.log(nome)
+
+    var pacienteTr = document.createElement("tr");
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    console.log(pacienteTr);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteTr);
+});
 
