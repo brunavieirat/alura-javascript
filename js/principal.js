@@ -40,3 +40,14 @@ for (var i = 0; i < pacientes.length; i++) {
         
     }
 }
+
+var titulo= document.querySelector("h1");
+
+titulo.addEventListener("click", mostraMensagem);
+
+function mostraMensagem(){
+    console.log("Olá eu fui clicado!");
+}
+
+
+
