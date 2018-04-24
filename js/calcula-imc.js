@@ -21,7 +21,7 @@ for (var i = 0; i < pacientes.length; i++) {
 
     
 function validaPeso(peso){
-    console.log('peso', peso)
+   // console.log('peso', peso)
     if (peso >= 0 && peso <= 1000) {
         return true;
     } else {
@@ -30,7 +30,7 @@ function validaPeso(peso){
 }
 
 function validaAltura(altura) {
-    console.log(altura)
+  //  console.log(altura)
     if (altura >= 0 && altura <= 3.0) {
         return true;
     } else {
