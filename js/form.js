@@ -8,7 +8,9 @@ buttonAdd.addEventListener("click", function (e) {
 
     var paciente=  obtemPacienteDoFormulario(form);
 
-    var pacienteTr= montaTr(paciente);    
+    //var pacienteTr= montaTr(paciente);    
+
+    adicionaPacienteNaTabela(paciente);
 
     // if(validaPaciente(paciente)){
     //     var tabela = document.querySelector("#tabela-pacientes");
@@ -92,4 +94,10 @@ function validaPaciente(paciente){
     else {
         return false;
     }
+}
+
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
 }
