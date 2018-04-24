@@ -10,10 +10,12 @@ campoFiltro.addEventListener("input", function(){
         var paciente = pacientes[i];
         var tdNome = paciente.querySelector(".info-nome");
         var nome=tdNome.textContent;
-
         
-
-        if(nome != this.value){
+        //exp reg (valor a ser buscado, i=case insensitive)
+        var expressao = new RegExp(this.value, "i");
+        
+        //testa se o valor da exp é diferente da variavel 
+        if( !expressao.test(nome)){
             paciente.classList.add("invisivel");
         } else {
             paciente.classList.remove("invisivel");
